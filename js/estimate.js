@@ -23,7 +23,7 @@ document.getElementById('save').addEventListener('click', function(){
   })
   .then(function(){
     
-    var wsjfval = ((ubvSelector.value+tcSelector.value+rroeSelector.value)/jsSelector.value)
+    var wsjfval = ((parseInt(ubvSelector.value,10)+parseInt(tcSelector.value,10)+parseInt(rroeSelector.value,10))/parseInt(jsSelector.value,10))
     return t.set('card', 'shared',  'wsjf', (wsjfval/10).toFixed(2)); //(parseFloat(Math.round(wsjfval) * 100) / 10000).toFixed(2))
   
   })
