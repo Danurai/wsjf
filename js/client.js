@@ -55,9 +55,11 @@ TrelloPowerUp.initialize({
             // opts.cards contains all card objects in the list
             var sortedCards = opts.cards.sort((a, b) => a.wsjf - b.wsjf);
             return {
-              sortedIds: sortedCards.map((c) => return c.id;);
+              sortedIds: sortedCards.map((c) => c.id)
             };
-          });
+          }
+        }]
+      });
   },
   'show-settings': function (t, options) {
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
