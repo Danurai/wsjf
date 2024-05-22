@@ -44,6 +44,20 @@ TrelloPowerUp.initialize({
         }
       }]
     });
+'list-sorters': function (t) {
+    return t.list('name', 'id')
+    .then(function (list) {
+      return [{
+        text: "WSJF",
+        callback: function (t, opts) {
+          // Trello will call this if the user clicks on this sort
+          // opts.cards contains all card objects in the list
+          var sortedCards = opts.cards.sort((a, b) => a.wsjf - b.wsjf);
+          return {
+            sortedIds: sortedCards.map((c) => return c.id;);
+          };
+        }
+      }];
   },
   'show-settings': function(t, options){
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
